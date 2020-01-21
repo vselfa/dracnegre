@@ -6,38 +6,40 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-
 import com.example.dracnegre.Model.ResultatEquip;
+import com.example.dracnegre.Model.ResultatEquipAmbFoto;
 import com.example.dracnegre.R;
 
 import java.util.ArrayList;
 
-public class EquipListAdapter extends ArrayAdapter<ResultatEquip> {
+public class EquipListAmbFotosAdapter extends ArrayAdapter<ResultatEquipAmbFoto> {
 
-    private static final String TAG = "PersonListAdapter";
+    private static final String TAG = "PersonListWithPhotoAdapter";
     private Context mContext;
     private int mResource;
 
-    public EquipListAdapter(Context context, int resource, ArrayList<ResultatEquip> objects) {
+    public EquipListAmbFotosAdapter(Context context, int resource, ArrayList<ResultatEquipAmbFoto> objects) {
         super(context, resource, objects);
-        mContext =  context;
+        mContext =  context;  // Important per accedir a getResources, entre altres coses
         mResource = resource;
     }
 
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //get the persons information
+        //  Get the team inforamtion
+        String fotoE = getItem(position).getFotoEquip();
         String nomE = getItem(position).getNomEquip();
         Integer puntsE = getItem(position).getPuntsEquip();
         Integer puntsJ = getItem(position).getPuntsJugadors();
 
         //Create the person object with the information
-        ResultatEquip equip = new ResultatEquip(nomE, puntsE, puntsJ);
+        ResultatEquipAmbFoto equip = new ResultatEquipAmbFoto(fotoE, nomE, puntsE, puntsJ);
 
         Log.d("equips", "getView ------: " + equip.getNomEquip() + ". Punts equip:"
                 + equip.getPuntsEquip() + ". Punts jugadors: "
@@ -46,10 +48,14 @@ public class EquipListAdapter extends ArrayAdapter<ResultatEquip> {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 
+        ImageView fotoEquip = convertView.findViewById(R.id.fotoEquip);
         TextView nomEquip = convertView.findViewById(R.id.nomEquip);
         TextView puntsEquip =  convertView.findViewById(R.id.puntsEquip);
         TextView puntsJugadors =  convertView.findViewById(R.id.puntsJugadors);
 
+        // Transformar el nom de la foto en R.drawable.nom_foto
+        int foto = mContext.getResources().getIdentifier( fotoE, "drawable", mContext.getPackageName());
+        fotoEquip.setImageResource(foto);
         nomEquip.setText(equip.getNomEquip());
         puntsEquip.setText(String.valueOf(equip.getPuntsEquip()));
         puntsJugadors.setText(String.valueOf(equip.getPuntsJugadors()));

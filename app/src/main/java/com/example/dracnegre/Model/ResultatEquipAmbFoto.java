@@ -1,14 +1,22 @@
 package com.example.dracnegre.Model;
 
-public  class ResultatEquip {
+public  class ResultatEquipAmbFoto {
+    String fotoEquip;  // El nom de la foto sense extensió
     String nomEquip;
     Integer puntsEquip;
     Integer puntsJugadors;
 
-    public ResultatEquip(String nom, Integer pE, Integer pJ) {
+    public ResultatEquipAmbFoto(String foto, String nom, Integer pE, Integer pJ) {
+        this.fotoEquip = foto;
         this.nomEquip = nom;
         this.puntsEquip = pE;
         this.puntsJugadors = pJ;
+    }
+    public String getFotoEquip() {
+        return fotoEquip;
+    }
+    public void setFotoEquip(String fotoEquip) {
+        this.fotoEquip = fotoEquip;
     }
     public String getNomEquip() {
         return nomEquip;
