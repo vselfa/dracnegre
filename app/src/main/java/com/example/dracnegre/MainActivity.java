@@ -43,8 +43,10 @@ public class MainActivity extends MainMenu {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        
         // The connexion to the RTDB
         database = FirebaseDatabase.getInstance();
         classificacio = "DracNegre/Interclubs2020/Classificació/1ProvincialCentro";
