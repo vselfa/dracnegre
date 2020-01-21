@@ -1,6 +1,5 @@
-package com.example.dracnegre;
+package com.example.dracnegre.Vista;
 
-import com.example.dracnegre.Model.Punts;
 import com.example.dracnegre.Model.ResultatEquip;
 
 import java.util.ArrayList;

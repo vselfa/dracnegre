@@ -87,7 +87,7 @@ public class MainActivity extends MainMenu {
         });
     }
 
-    class MySort implements Comparator<Object> {
+    static class MySort implements Comparator<Object> {
         public int compare(Object o1, Object o2) {
             return ((Punts) o2).getPuntsEquip() - ((Punts) o1).getPuntsEquip() ;
         }
