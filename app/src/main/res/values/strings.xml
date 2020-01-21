@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">DRAC NEGRE</string>
+    <string name="action_settings">Settings</string>
+    <string name="competicio">CALENDARI</string>
+    <string name="DracA">DRAC A</string>
+    <string name="DracB">DRAC B</string>
+    <string name="DracC">DRAC C</string>
+    <string name="LocalsJoc">LOCALS JOC</string>
+    <string name="title_activity_ordre_forza">Ordre de Força</string>
+    <string name="title_activity_locals_joc">Locals de Joc</string>
+    <string name="title_activity_competicio">Competicio</string>
+    <string name="Home">INICI</string>
+    <string name="title_activity_maps_clubs_escacs">Map</string>
+    <string name="title_activity_res_drac_a">RESULTADOS DRAC A</string>
+    <string name="title_activity_res_drac_b">RESULTADOS DRAC B</string>
+    <string name="title_activity_res_drac_c">RESULTADOS DRAC C</string>
+    <string name="title_activity_maps_clubs_fragments">LOCAL DE JOC</string>
+    <string name="title_activity_clas_drac_a">CLASSIFICACIÓ DRAC A </string>
+    <string name="title_activity_clas_drac_b">CLASSIFICACIÓ DRAC B </string>
+    <string name="title_activity_clas_drac_c">CLASSIFICACIÓ DRAC C </string>
+    <string name="mapsLocalsJoc">Mapes locals jocs</string>
+    <string name="title_activity_maps_poblacions">Map</string>
+</resources>

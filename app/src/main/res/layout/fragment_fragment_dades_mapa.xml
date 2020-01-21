@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DadesMapafragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentDadesMapa"
+    android:background="@android:color/darker_gray"
+    >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/nomClub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Nom del club"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/nomCiutat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ciutat"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/adreçaClub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adreça"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/numTelf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teléfon"
+                android:textSize="18sp" />
+
+        </TableRow>
+    </TableLayout>
+</FrameLayout>

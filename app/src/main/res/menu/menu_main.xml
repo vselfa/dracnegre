@@ -1,0 +1,83 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.dracnegre.MainActivity">
+    <item
+        android:id="@+id/Home"
+        android:orderInCategory="100"
+        android:title="@string/Home"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/competicio"
+        android:orderInCategory="100"
+        android:title="@string/competicio"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/DracA"
+        android:orderInCategory="100"
+        android:title="@string/DracA"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/ResDracA"
+                android:title="RESULTATS"
+            />
+
+            <item
+                android:id="@+id/ClassDracA"
+                android:title="CLASSIFICACIÓ"
+            />
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/DracB"
+        android:orderInCategory="100"
+        android:title="@string/DracB"
+        app:showAsAction="never" >
+        <menu>
+            <item
+                android:id="@+id/ResDracB"
+                android:title="RESULTATS"
+            />
+
+        <item
+            android:id="@+id/ClassDracB"
+            android:title="CLASSIFICACIÓ"
+            />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/DracC"
+        android:orderInCategory="100"
+        android:title="@string/DracC"
+        app:showAsAction="never" >
+        <menu>
+            <item
+                android:id="@+id/ResDracC"
+                android:title="RESULTATS"
+            />
+
+            <item
+                android:id="@+id/ClassDracC"
+                android:title="CLASSIFICACIÓ"
+            />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/LocalsJoc"
+        android:orderInCategory="100"
+        android:title="@string/LocalsJoc"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/mapaLocalsJoc"
+        android:orderInCategory="100"
+        android:title="@string/mapsLocalsJoc"
+        app:showAsAction="never" />
+
+
+</menu>

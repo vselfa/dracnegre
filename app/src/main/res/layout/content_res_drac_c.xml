@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ResDracCActivity"
+    tools:showIn="@layout/activity_res_drac_c">
+
+    <TableLayout
+        android:layout_width="338dp"
+        android:layout_height="199dp"
+        android:weightSum="8"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r1cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r1cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Basilio J"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Quart E"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r2cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r2cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r3cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r3cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Buñol"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Torrefiel C"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r4cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r4cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView57"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Ciutat Vella"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r5cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r5cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView64"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Basilio J"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r6cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r6cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView69"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r7cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r7cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView73"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Quart E"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView74"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Buñol"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r8cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r8cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView77"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView78"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r9cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r9cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView81"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Torrefiel C"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView82"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#dcdcdc"
+                android:text="Drac Negre C"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r10cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/r10cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#dcdcdc"
+                android:text="0"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:id="@+id/textView85"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:background="#dcdcdc"
+                android:text="Ciutat Vella"
+                android:textColor="@android:color/background_dark"/>
+        </TableRow>
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

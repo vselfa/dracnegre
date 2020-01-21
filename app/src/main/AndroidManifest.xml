@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.dracnegre">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsPoblacionsActivity"
+            android:label="@string/title_activity_maps_poblacions"></activity>
+        <activity
+            android:name=".ClasDracCActivity"
+            android:label="@string/title_activity_clas_drac_c"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ClasDracBActivity"
+            android:label="@string/title_activity_clas_drac_b"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ClasDracAActivity"
+            android:label="@string/title_activity_clas_drac_a"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MapsClubsFragments"
+            android:label="@string/title_activity_maps_clubs_fragments"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ResDracCActivity"
+            android:label="@string/title_activity_res_drac_c"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ResDracBActivity"
+            android:label="@string/title_activity_res_drac_b"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ResDracAActivity"
+            android:label="@string/title_activity_res_drac_a"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Competicio"
+            android:label="@string/title_activity_competicio"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LocalsJoc"
+            android:label="@string/title_activity_locals_joc"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OrdreForza"
+            android:label="@string/title_activity_ordre_forza"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
