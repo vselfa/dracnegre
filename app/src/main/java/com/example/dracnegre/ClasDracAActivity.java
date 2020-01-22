@@ -11,7 +11,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.dracnegre.Model.Punts;
 import com.example.dracnegre.Model.ResultatEquip;
+import com.example.dracnegre.Model.ResultatEquipAmbFoto;
 import com.example.dracnegre.Vista.EquipListAdapter;
+import com.example.dracnegre.Vista.EquipListAmbFotosAdapter;
+import com.example.dracnegre.Vista.MyCallbackWithPhoto;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,9 +43,10 @@ public class ClasDracAActivity extends MainMenu {
     private Set<Punts> keys;
     TextView equipsClassificats;
 
-    ArrayList<ResultatEquip> equipList;
+    ArrayList<ResultatEquipAmbFoto> equipList;
     // El adapter
-    EquipListAdapter adapter;
+    // EquipListAdapter adapter;
+    EquipListAmbFotosAdapter adapter;
 
     public Context getContext() {
         return this;
@@ -61,10 +65,6 @@ public class ClasDracAActivity extends MainMenu {
         // Using ScrollView  to show the classified list
         equipsClassificats = findViewById(R.id.elsEquipsClassficats);
 
-        // myRef = database.getReference("DracNegre/Interclubs2020/2AutonomicaCentro/Classificació/Alaquas B");
-        classificacio = "DracNegre/Interclubs2020/Classificació/1ProvincialCentro";
-        myRef = database.getReference(classificacio);
-
         // The connexion to the RTDB
         database = FirebaseDatabase.getInstance();
         classificacio = "DracNegre/Interclubs2020/Classificació/1ProvincialCentro";
@@ -80,16 +80,16 @@ public class ClasDracAActivity extends MainMenu {
         equipList = new ArrayList<>();
         hashMapEquips = new HashMap<>();
 
-        getLlistaEquipsOrdenats( new MyCallback() {
+        getLlistaEquipsOrdenatsAmbFoto( new MyCallbackWithPhoto() {
             @Override
-            public void onCallback(ArrayList<ResultatEquip> equipList) {
-                adapter = new EquipListAdapter(getContext(), R.layout.adapter_view_layout, equipList);
+            public void onCallbackWithPhoto(ArrayList<ResultatEquipAmbFoto> equips) {
+                adapter = new EquipListAmbFotosAdapter(getContext(), R.layout.adapter_view_layout_with_picture, equipList);
                 mListView.setAdapter(adapter);
             }
         });
     }
 
-    public void getLlistaEquipsOrdenats(final MyCallback myCallback) {
+    public void getLlistaEquipsOrdenatsAmbFoto(final MyCallbackWithPhoto myCallbackWithPhoto) {
         myRef.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -129,27 +129,24 @@ public class ClasDracAActivity extends MainMenu {
                                     + punts.getPuntsEquip() + " "
                                     + punts.getPuntsJugadors()+ "\n" );
 
-                            /*// Nova versió mostrar classficació amb un adapter
-                            hashMapPuntsClassificacio.put(punts.getPuntsEquip(),
-                                    punts.getPuntsJugadors());
-                            hashMapEquipsClassificats.put(equipsClassificats.getText().toString(),
-                                    hashMapPuntsClassificacio);*/
-
-                            // Un altre tipus d'adapter: utilitzant un objecte ResultatEquip
+                            // Un altre tipus d'adapter: utilitzant un objecte ResultatEquipAmbFoto
                             // Creem un objecte per a cada resultat
-                            ResultatEquip resultatEquip = new ResultatEquip(treeMap.get(punts),
-                                    punts.getPuntsEquip(), punts.getPuntsJugadors());
+                            ResultatEquipAmbFoto resultatEquipAmbFoto =
+                                  new ResultatEquipAmbFoto(equipsClassificats.getText().toString(),
+                                            treeMap.get(punts),
+                                            punts.getPuntsEquip(), punts.getPuntsJugadors());
                             // L'afegim a la llista d'equips
-                            Log.d("equips", "Resultat equip ------: " + resultatEquip.getNomEquip() + ". Punts equip:"
-                                    + resultatEquip.getPuntsEquip() + ". Punts jugadors: "
-                                    + resultatEquip.getPuntsJugadors());
-                            equipList.add(resultatEquip);
+                            Log.d("equips", "Resultat equip ------: "
+                                    + resultatEquipAmbFoto.getNomEquip() + ". Punts equip:"
+                                    + resultatEquipAmbFoto.getPuntsEquip() + ". Punts jugadors: "
+                                    + resultatEquipAmbFoto.getPuntsJugadors());
+                            equipList.add(resultatEquipAmbFoto);
                         }
                     }
                 } // End for
 
                 // Into onDataChange method!!
-                myCallback.onCallback(equipList);
+                myCallbackWithPhoto.onCallbackWithPhoto(equipList);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {            }
