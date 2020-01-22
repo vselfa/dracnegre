@@ -63,7 +63,7 @@ public class ClasDracAActivity extends MainMenu {
         database = FirebaseDatabase.getInstance();
 
         // Using ScrollView  to show the classified list
-        equipsClassificats = findViewById(R.id.elsEquipsClassficats);
+        // equipsClassificats = findViewById(R.id.elsEquipsClassficats);
 
         // The connexion to the RTDB
         database = FirebaseDatabase.getInstance();
@@ -112,7 +112,7 @@ public class ClasDracAActivity extends MainMenu {
                     if (aux > numClubs) {
                         // Mostrem  valors (Nom club) ordenats
                         treeMap.clear(); // netejem les dades
-                        equipsClassificats.setText(""); // Netejem la llista mostrada
+                        // equipsClassificats.setText(""); // Netejem la llista mostrada
                         treeMap.putAll(hashMapEquips);
                         Log.d("equips", " Clubs ordenats ------------------");
                         // Les claus = punts
@@ -123,16 +123,16 @@ public class ClasDracAActivity extends MainMenu {
                                     + punts.getPuntsEquip() + ". Punts jugadors: "
                                     + punts.getPuntsJugadors());
 
-                            // Utilitzem un scrollView per mostrar la llista d'equips classificats
+                            /*// Utilitzem un scrollView per mostrar la llista d'equips classificats
                             equipsClassificats.setText(equipsClassificats.getText()+ "\n " + i++
                                     + "   " + treeMap.get(punts) + " ----- "
                                     + punts.getPuntsEquip() + " "
-                                    + punts.getPuntsJugadors()+ "\n" );
+                                    + punts.getPuntsJugadors()+ "\n" );*/
 
                             // Un altre tipus d'adapter: utilitzant un objecte ResultatEquipAmbFoto
                             // Creem un objecte per a cada resultat
                             ResultatEquipAmbFoto resultatEquipAmbFoto =
-                                  new ResultatEquipAmbFoto(equipsClassificats.getText().toString(),
+                                  new ResultatEquipAmbFoto("hombreanonimo",
                                           treeMap.get(punts),
                                           punts.getPuntsEquip(),
                                           punts.getPuntsJugadors());
