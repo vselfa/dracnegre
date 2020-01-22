@@ -43,7 +43,8 @@
         <activity
             android:name=".ClasDracAActivity"
             android:label="@string/title_activity_clas_drac_a"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".MapsClubsFragments"
             android:label="@string/title_activity_maps_clubs_fragments"

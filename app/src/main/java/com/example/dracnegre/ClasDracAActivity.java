@@ -69,7 +69,7 @@ public class ClasDracAActivity extends MainMenu {
         database = FirebaseDatabase.getInstance();
         classificacio = "DracNegre/Interclubs2020/Classificació/1ProvincialCentro";
         myRef = database.getReference(classificacio);
-        Log.d("equips", "onCreate -----------" + classificacio);
+        Log.d("equips", "onCreate ----------- ClasDracAActivity" + classificacio);
 
         // Nova versió del layout: HashMap [Equip,  HashMap [PuntsE, PuntsJ]] i adapter
         final HashMap<Integer ,Integer> hashMapPuntsClassificacio = new HashMap<>();
@@ -133,8 +133,9 @@ public class ClasDracAActivity extends MainMenu {
                             // Creem un objecte per a cada resultat
                             ResultatEquipAmbFoto resultatEquipAmbFoto =
                                   new ResultatEquipAmbFoto(equipsClassificats.getText().toString(),
-                                            treeMap.get(punts),
-                                            punts.getPuntsEquip(), punts.getPuntsJugadors());
+                                          treeMap.get(punts),
+                                          punts.getPuntsEquip(),
+                                          punts.getPuntsJugadors());
                             // L'afegim a la llista d'equips
                             Log.d("equips", "Resultat equip ------: "
                                     + resultatEquipAmbFoto.getNomEquip() + ". Punts equip:"
