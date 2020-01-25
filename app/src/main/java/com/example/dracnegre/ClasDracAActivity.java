@@ -10,11 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.dracnegre.Model.Punts;
-import com.example.dracnegre.Model.ResultatEquip;
 import com.example.dracnegre.Model.ResultatEquipAmbFoto;
-import com.example.dracnegre.Vista.EquipListAdapter;
 import com.example.dracnegre.Vista.EquipListAmbFotosAdapter;
 import com.example.dracnegre.Vista.MyCallbackWithPhoto;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.ListMultimap;
+import com.google.common.collect.Multimaps;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +26,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.TreeMap;
+
+import com.google.common.collect.Multimap;
+import com.google.common.collect.TreeMultimap;
 
 public class ClasDracAActivity extends MainMenu {
 
@@ -39,7 +43,12 @@ public class ClasDracAActivity extends MainMenu {
     // 2.- El hashmap ordenat
     // Canviem l'ordre del camp en el hashmap per ordenar
     HashMap<Punts, String> hashMapEquips;
-    private TreeMap<Punts, String> treeMap = new TreeMap<>(sort);
+
+    // private TreeMap<Punts, String> treeMap = new TreeMap<>(sort);
+    // Per poder ordenar claus repetides
+    private Multimap<Punts, String> treeMultiMap = HashMultimap.create();
+
+
     private Set<Punts> keys;
     TextView equipsClassificats;
 
@@ -60,20 +69,11 @@ public class ClasDracAActivity extends MainMenu {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        database = FirebaseDatabase.getInstance();
-
-        // Using ScrollView  to show the classified list
-        // equipsClassificats = findViewById(R.id.elsEquipsClassficats);
-
         // The connexion to the RTDB
         database = FirebaseDatabase.getInstance();
         classificacio = "DracNegre/Interclubs2020/Classificació/1ProvincialCentro";
         myRef = database.getReference(classificacio);
         Log.d("equips", "onCreate ----------- ClasDracAActivity" + classificacio);
-
-        // Nova versió del layout: HashMap [Equip,  HashMap [PuntsE, PuntsJ]] i adapter
-        final HashMap<Integer ,Integer> hashMapPuntsClassificacio = new HashMap<>();
-        final HashMap<String, Object> hashMapEquipsClassificats = new HashMap<>() ;
 
         // Tercera versió del layout amb un arrayadapter i un objecte ResultatEquip
         final ListView mListView =  findViewById(R.id.listView);
@@ -100,40 +100,32 @@ public class ClasDracAActivity extends MainMenu {
                 int aux = 1;
                 hashMapEquips.clear();
                 equipList.clear();
+                treeMultiMap.clear(); // netejem les dades
                 for (DataSnapshot clubRef : clubsRef.getChildren()) {
                     Log.d("equips", "Els punts de cada club : " +  clubRef.getKey() + " -- " + clubRef.getValue());
                     // Llegim els punts de cada club
                     punts = clubRef.getValue(Punts.class);
                     // Els afegim al HashMap amb els camps canviats
-                    hashMapEquips.put(punts, clubRef.getKey());
+                    treeMultiMap.put(punts, clubRef.getKey());
                     // Els mostrem durant l'última passada del for per a que aparega en cada canvi
                     // de forma immediata
                     aux++;
                     if (aux > numClubs) {
                         // Mostrem  valors (Nom club) ordenats
-                        treeMap.clear(); // netejem les dades
-                        // equipsClassificats.setText(""); // Netejem la llista mostrada
-                        treeMap.putAll(hashMapEquips);
                         Log.d("equips", " Clubs ordenats ------------------");
                         // Les claus = punts
-                        Set<Punts> keys = treeMap.keySet();
+                        Set<Punts> keys = treeMultiMap.keySet();
                         int i=1;
                         for(Punts punts: keys){
-                            Log.d("equips", "Club: " + treeMap.get(punts)+". Punts equip:"
+                            Log.d("equips", "Club: " + treeMultiMap.get(punts)+". Punts equip:"
                                     + punts.getPuntsEquip() + ". Punts jugadors: "
                                     + punts.getPuntsJugadors());
-
-                            /*// Utilitzem un scrollView per mostrar la llista d'equips classificats
-                            equipsClassificats.setText(equipsClassificats.getText()+ "\n " + i++
-                                    + "   " + treeMap.get(punts) + " ----- "
-                                    + punts.getPuntsEquip() + " "
-                                    + punts.getPuntsJugadors()+ "\n" );*/
 
                             // Un altre tipus d'adapter: utilitzant un objecte ResultatEquipAmbFoto
                             // Creem un objecte per a cada resultat
                             ResultatEquipAmbFoto resultatEquipAmbFoto =
                                   new ResultatEquipAmbFoto("hombreanonimo",
-                                          treeMap.get(punts),
+                                          treeMultiMap.get(punts).toString(),
                                           punts.getPuntsEquip(),
                                           punts.getPuntsJugadors());
                             // L'afegim a la llista d'equips
