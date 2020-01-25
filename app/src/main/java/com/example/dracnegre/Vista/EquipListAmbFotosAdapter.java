@@ -41,10 +41,10 @@ public class EquipListAmbFotosAdapter extends ArrayAdapter<ResultatEquipAmbFoto>
         //Create the person object with the information
         ResultatEquipAmbFoto equip = new ResultatEquipAmbFoto(fotoE, nomE, puntsE, puntsJ);
 
-        Log.d("equips", "getView ------: " + equip.getNomEquip() + ". Punts equip:"
+        /*Log.d("equips", "getView ------: " + equip.getNomEquip() + ". Punts equip:"
                 + equip.getPuntsEquip() + ". Punts jugadors: "
                 + equip.getPuntsJugadors());
-
+*/
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 
@@ -54,7 +54,12 @@ public class EquipListAmbFotosAdapter extends ArrayAdapter<ResultatEquipAmbFoto>
         TextView puntsJugadors =  convertView.findViewById(R.id.puntsJugadors);
 
         // Transformar el nom de la foto en R.drawable.nom_foto
-        int foto = mContext.getResources().getIdentifier( fotoE, "drawable", mContext.getPackageName());
+        // Eliminar corxets del nom de la foto
+        String nomFoto = fotoE.substring(1, fotoE.length()-1);
+        Log.d ("equips", "Foto retallada: " + nomFoto);
+
+        int foto = mContext.getResources().getIdentifier( nomFoto, "drawable", mContext.getPackageName());
+        Log.d("equips", "EquipListAmbFotosAdapter ------: Nom foto: " + nomFoto + " int " + foto );
         fotoEquip.setImageResource(foto);
         nomEquip.setText(equip.getNomEquip());
         puntsEquip.setText(String.valueOf(equip.getPuntsEquip()));

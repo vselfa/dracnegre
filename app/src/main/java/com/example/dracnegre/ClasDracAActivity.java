@@ -102,14 +102,15 @@ public class ClasDracAActivity extends MainMenu {
                             // Un adapter utilitzant un objecte ResultatEquipAmbFoto
                             // Creem un objecte per a cada resultat
                             ResultatEquipAmbFoto resultatEquipAmbFoto =
-                                  new ResultatEquipAmbFoto("hombreanonimo",
+                                  new ResultatEquipAmbFoto(treeMultiMap.get(punts).toString(),
                                           treeMultiMap.get(punts).toString(),
                                           punts.getPuntsEquip(),
                                           punts.getPuntsJugadors());
                             // L'afegim a la llista d'equips
-                            Log.d("equips", "Resultat equip ------: "
-                                    + resultatEquipAmbFoto.getNomEquip() + ". Punts equip:"
-                                    + resultatEquipAmbFoto.getPuntsEquip() + ". Punts jugadors: "
+                            Log.d("equips", "Resultat equip ------: Foto: "
+                                    + resultatEquipAmbFoto.getFotoEquip() + " . Nom equip:"
+                                    + resultatEquipAmbFoto.getNomEquip()  + " . Punts equip:"
+                                    + resultatEquipAmbFoto.getPuntsEquip()+ " . Punts jugadors: "
                                     + resultatEquipAmbFoto.getPuntsJugadors());
                             equipList.add(resultatEquipAmbFoto);
                         }

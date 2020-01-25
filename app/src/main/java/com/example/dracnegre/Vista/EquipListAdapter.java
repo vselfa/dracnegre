@@ -35,10 +35,10 @@ public class EquipListAdapter extends ArrayAdapter<ResultatEquip> {
 
         //Create the person object with the information
         ResultatEquip equip = new ResultatEquip(nomE, puntsE, puntsJ);
-
+/*
         Log.d("equips", "getView ------: " + equip.getNomEquip() + ". Punts equip:"
                 + equip.getPuntsEquip() + ". Punts jugadors: "
-                + equip.getPuntsJugadors());
+                + equip.getPuntsJugadors());*/
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
