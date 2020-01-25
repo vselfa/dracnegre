@@ -56,12 +56,13 @@ public class EquipListAmbFotosAdapter extends ArrayAdapter<ResultatEquipAmbFoto>
         // Transformar el nom de la foto en R.drawable.nom_foto
         // Eliminar corxets del nom de la foto
         String nomFoto = fotoE.substring(1, fotoE.length()-1);
-        Log.d ("equips", "Foto retallada: " + nomFoto);
-
         int foto = mContext.getResources().getIdentifier( nomFoto, "drawable", mContext.getPackageName());
         Log.d("equips", "EquipListAmbFotosAdapter ------: Nom foto: " + nomFoto + " int " + foto );
         fotoEquip.setImageResource(foto);
-        nomEquip.setText(equip.getNomEquip());
+        // Eliminar corxets del nom de l'equip
+        String nomEquipAux = equip.getNomEquip().substring(1, equip.getNomEquip().length()-1);
+        nomEquip.setText(nomEquipAux);
+        // Els punts
         puntsEquip.setText(String.valueOf(equip.getPuntsEquip()));
         puntsJugadors.setText(String.valueOf(equip.getPuntsJugadors()));
 
